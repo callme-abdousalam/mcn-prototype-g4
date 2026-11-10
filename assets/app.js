@@ -14,6 +14,10 @@
     var open = nav.classList.toggle("open");
     btn.setAttribute("aria-expanded", open ? "true" : "false");
   });
+  if (btn && nav) nav.addEventListener("click", function (e) { if (e.target.closest("a")) { nav.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); } });
+  var hd = document.querySelector(".header");
+  function onScroll() { if (hd) hd.classList.toggle("scrolled", scrollY > 30); }
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
   // ---- Mesure (GA4 après consentement)
   var queue = [];
