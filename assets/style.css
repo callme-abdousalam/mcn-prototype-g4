@@ -185,3 +185,11 @@ a.card:hover{transform:translateY(-6px)}
  .nav .btn{margin:6px 0 0;justify-content:center}
 }
 @media (max-width:520px){.mb-t{display:none}.brand-name{font-size:16px}.brand-name small{font-size:10px}.header{padding:8px 8px 0}}
+.header .bar{max-width:1440px;gap:14px}
+.header .bar .brand{flex:0 1 auto;min-width:0}
+.nav{flex:0 1 auto;min-width:0}
+.nav a{padding:9px 11px}
+.nav .btn{margin-left:4px;padding:10px 14px;white-space:nowrap}
+@media (min-width:1241px) and (max-width:1360px){.nav a{padding:9px 9px;font-size:14px}.brand-name{font-size:17px}.nav .btn{padding:10px 12px;font-size:14px}}
+@media (min-width:1440px){.nav a .ni{display:none}}
+@media (min-width:1600px){.nav a .ni{display:block}}
