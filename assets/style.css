@@ -41,3 +41,52 @@
 .gallery figure:hover img{transform:scale(1.06)}
 @media (max-width:860px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .photo-cap b{display:block;color:#fff}.photo-cap{font-size:12px}
+/* ===== Thème verre dépoli lumineux ===== */
+:root{--glass:rgba(255,255,255,.58);--glass-strong:rgba(255,255,255,.74);--glass-line:rgba(255,255,255,.75);--glass-shadow:0 18px 40px -22px rgba(27,37,80,.35)}
+html{background:#F4EEE4}
+body{background:transparent;position:relative}
+body::before{content:"";position:fixed;inset:-30px;z-index:-2;background:var(--pagebg,url("https://commons.wikimedia.org/wiki/Special:FilePath/Mus%C3%A9e%20des%20civilisations%20noires%2001.jpg?width=2000")) center/cover no-repeat;filter:blur(6px) saturate(1.1)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(160deg,rgba(250,247,241,.78) 0%,rgba(250,247,241,.62) 45%,rgba(239,231,218,.74) 100%)}
+.section,.alt,.section.texture{background:transparent}
+.alt,.section.texture{background:rgba(239,231,218,.35)}
+.card,.expo,.callout,.step,.facts-box,.event,.table-scroll,details{background:var(--glass)!important;border:1px solid var(--glass-line)!important;-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);box-shadow:var(--glass-shadow)}
+.expo:hover{background:var(--glass-strong)!important}
+input,select,textarea{background:rgba(255,255,255,.8)}
+.header{background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid var(--glass-line)}
+.notice{background:rgba(27,37,80,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+/* Hero et en-têtes de page : clairs */
+.hero,.hero.photo,.page-head,.page-head.photo{color:var(--ink)}
+.hero.photo{background:linear-gradient(100deg,rgba(250,247,241,.92) 0%,rgba(250,247,241,.78) 45%,rgba(250,247,241,.15) 100%),var(--bg) center/cover no-repeat}
+.page-head.photo{background:linear-gradient(90deg,rgba(250,247,241,.9) 0%,rgba(250,247,241,.7) 55%,rgba(250,247,241,.25) 100%),var(--bg) center/cover no-repeat}
+.hero h1,.page-head h1{color:var(--indigo)}
+.hero h1 em{color:var(--copper)}
+.hero .lead,.page-head .lead{color:#3E4558}
+.hero .eyebrow,.page-head .eyebrow{color:var(--copper)}
+.page-head .crumbs,.page-head .crumbs a,.page-head .meta,.page-head .meta *{color:#3E4558}
+.hero .btn.ghost,.page-head .btn.ghost{color:var(--indigo);box-shadow:inset 0 0 0 1.5px var(--indigo);background:rgba(255,255,255,.5)}
+.hero .btn.ghost:hover,.page-head .btn.ghost:hover{background:var(--indigo);color:#fff}
+.hero-frame{border:6px solid rgba(255,255,255,.7);box-shadow:0 30px 60px -25px rgba(27,37,80,.55)}
+/* Sections sombres -> verre clair */
+.dark{background:rgba(255,255,255,.42)!important;color:var(--ink);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-block:1px solid var(--glass-line)}
+.dark h2,.dark h3,.dark .num{color:var(--indigo)}
+.dark .lead,.dark .muted,.dark .small,.dark p{color:#3E4558}
+.dark .eyebrow{color:var(--copper)}
+.dark a{color:var(--copper)}
+.dark .btn.ghost{color:var(--indigo);box-shadow:inset 0 0 0 1.5px var(--indigo)}
+.mapcard{background:rgba(27,37,80,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+/* Pied de page clair */
+.footer{background:rgba(255,255,255,.6);color:#3E4558;-webkit-backdrop-filter:blur(20px) saturate(1.3);backdrop-filter:blur(20px) saturate(1.3);border-top:1px solid var(--glass-line)}
+.footer h4,.footer .brand-foot{color:var(--indigo)}
+.footer .brand-foot small{color:var(--muted)}
+.footer a{color:var(--ink)}
+.footer a:hover{color:var(--copper)}
+.footer .legal{border-top:1px solid rgba(27,37,80,.12);color:var(--muted)}
+.foot-wa a{color:var(--indigo)}
+.foot-wa svg{color:#1FA855}
+.soc{background:rgba(27,37,80,.08);color:var(--indigo)}
+.soc:hover{background:var(--copper);color:#fff}
+.stat b{color:var(--indigo)}.stat span{color:#3E4558}.stat{border-top-color:var(--copper)}
+.crumbs{color:#5B6172}.crumbs a{color:var(--indigo)}
+.hero .meta li,.hero .meta span{color:#3E4558}
+.hero .facts,.hero .facts span{color:#3E4558}
+.dark h1,.dark h2,.dark h3{color:var(--indigo)!important}

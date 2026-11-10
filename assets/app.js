@@ -4,6 +4,10 @@
   var GA4_ID = window.GA4_ID || "";
   var WA_NUMBER = "221784525270";
 
+  // ---- Fond de page : reprend la photo de l'en-tête
+  var hb = document.querySelector(".hero.photo,.page-head.photo");
+  if (hb) { var v = hb.style.getPropertyValue("--bg"); if (v) document.documentElement.style.setProperty("--pagebg", v); }
+
   // ---- Menu mobile
   var btn = document.querySelector(".menu-btn"), nav = document.querySelector(".nav");
   if (btn && nav) btn.addEventListener("click", function () {
