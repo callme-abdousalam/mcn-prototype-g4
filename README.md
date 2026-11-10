@@ -29,5 +29,5 @@ Chaque modification enregistrée sur la branche `main` est publiée automatiquem
 ## Règles du projet
 
 - Garder le bandeau « site non officiel » sur chaque page.
-- Ne jamais ajouter le logo ni les photos du musée.
+- Ne jamais ajouter le logo officiel du musée. Les photos viennent de Wikimedia Commons (licence libre) : garder le nom de l’auteur et la licence, et compléter les crédits dans projet.html si une photo est ajoutée.
 - Ne jamais mettre les vraies coordonnées du musée dans un formulaire ou un bouton de test.
