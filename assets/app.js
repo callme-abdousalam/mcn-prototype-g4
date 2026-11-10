@@ -90,4 +90,36 @@
     track("click_whatsapp_groupe", { page: page || "" });
     window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
   });
+
+  // ---- Apparition au défilement
+  var sel = ".section h2,.card,.expo,.step,.facts-box,.gallery figure,.stat,.callout,.event,.reveal";
+  function prep(root) {
+    var els = (root || document).querySelectorAll(sel);
+    els.forEach(function (el, i) { if (!el.classList.contains("reveal")) { el.classList.add("reveal"); el.style.setProperty("--d", (i % 4) * 80 + "ms"); } });
+    return els;
+  }
+  if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.documentElement.classList.add("js-anim");
+    var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }); }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    prep().forEach(function (el) { io.observe(el); });
+    setTimeout(function () { document.querySelectorAll(".reveal:not(.in)").forEach(function (el) { var r = el.getBoundingClientRect(); if (r.top < innerHeight) el.classList.add("in"); }); }, 1200);
+  }
+
+  // ---- Agrandir une œuvre
+  var works = document.querySelectorAll(".work");
+  if (works.length) {
+    var lb = document.createElement("div"); lb.className = "lightbox"; lb.setAttribute("role", "dialog"); lb.setAttribute("aria-label", "Œuvre agrandie");
+    lb.innerHTML = '<img alt=""><p></p>'; document.body.appendChild(lb);
+    works.forEach(function (w) {
+      w.addEventListener("click", function (ev) {
+        if (ev.target.closest("a")) return;
+        lb.querySelector("img").src = w.getAttribute("data-big");
+        lb.querySelector("img").alt = w.querySelector("img").alt;
+        lb.querySelector("p").textContent = w.getAttribute("data-cap");
+        lb.classList.add("show"); track("view_oeuvre", { oeuvre: w.querySelector("img").alt });
+      });
+    });
+    lb.addEventListener("click", function () { lb.classList.remove("show"); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") lb.classList.remove("show"); });
+  }
 })();
