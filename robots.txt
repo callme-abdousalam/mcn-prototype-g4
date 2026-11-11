@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mcn-prototype-g4.vercel.app/sitemap.xml

@@ -1,4 +1,17 @@
 {
   "cleanUrls": false,
-  "headers": [{"source": "/(.*)", "headers": [{"key": "X-Robots-Tag", "value": "noindex"}]}]
+  "redirects": [
+    {
+      "source": "/exposition.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "e",
+          "value": "(?<slug>[a-z-]+)"
+        }
+      ],
+      "destination": "/expositions/:slug.html",
+      "permanent": true
+    }
+  ]
 }
