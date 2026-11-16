@@ -220,3 +220,12 @@ a.card:hover{transform:translateY(-6px)}
 .lang-switch button{transition:none}
 @media (max-width:440px){.brand-name small{display:none}.brand-name{font-size:14.5px;white-space:normal;max-width:9.5em}.brand-mark{width:38px;height:38px}}
 @media (min-width:1401px){.nav a .ni{display:none!important}}
+/* ===== Gains rapides séance 4 : contraste, ordre des titres, débordement mobile ===== */
+.eyebrow,.hero .eyebrow,.page-head .eyebrow,.dark .eyebrow{color:#8E3E1A}
+.notice b{color:#F4B886}
+.prose a,.credits a,.dark a{color:#8E3E1A}
+.prose,.split>*,.wide>*{min-width:0}
+.prose{overflow-wrap:anywhere}
+.prose table{display:block;overflow-x:auto;max-width:100%}
+.footer .foot-h{font-family:var(--display);font-size:18px;margin:0 0 12px;font-weight:600;color:var(--indigo)}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
